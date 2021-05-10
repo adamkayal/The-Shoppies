@@ -127,7 +127,9 @@ function getSearchResults() {
         url: `${searchApiURL}${searchQuery}`,
         type: 'get',
         dataType: 'json',
-        success: buildSearchResults(data, searchQuery)
+        success: function(data) {
+            buildSearchResults(data, searchQuery);
+        }
     });
 }
 
