@@ -95,6 +95,8 @@ function nominate() {
  * @param {string} searchQuery - The search query entered by the user in the search bar.
  */
 function buildSearchResults(data, searchQuery) {
+    const searchResults = $("#search-results");
+    searchResults.html("");
     if (data && data.Response === "False") {
         $("#results-for").html(`No results for "${searchQuery}"`);
     } else if (data && data.Response === "True" && data.Search) {
@@ -121,8 +123,6 @@ function buildSearchResults(data, searchQuery) {
 /** Gets search results from the OMDB api. */
 function getSearchResults() {
     const searchQuery = $(this).val();
-    const searchResults = $("#search-results");
-    searchResults.html("");
     $.ajax({
         url: `${searchApiURL}${searchQuery}`,
         type: 'get',
