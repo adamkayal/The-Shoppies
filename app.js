@@ -137,7 +137,7 @@ function main() {
     $(document).on("click", ".js-nominate", nominate);
     $(document).on("click", ".js-remove", removeNomination);
 
-    // saving cookies on when tab closes
+    // saving cookies when tab closes
     $(window).on("unload", saveNomination);
     // loading nominations from cookies when DOM is loaded
     $(document).ready(loadNominations);
